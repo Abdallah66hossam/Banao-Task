@@ -1,0 +1,33 @@
+[
+    {
+        "category": "Article",
+        "title": "What if famous brands had regular fonts? Meet RegulaBrands!",
+        "description": "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
+        "profileImage": "../public/assets/human1.png",
+        "name": "Sarthak Kamra",
+        "image": "../public/assets/img1.png"
+    },
+    {
+        "category": "Education",
+        "title": "Tax Benefits for Investment under National Pension Scheme launched by Government",
+        "description": "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
+        "profileImage": "../public/assets/human2.png",
+        "name": "Sarah West",
+        "image": "../public/assets/img2.png"
+    },
+    {
+        "category": "Meetup",
+        "title": "Finance & Investment Elite Social Mixer @Lujiazui",
+        "description": "Fri, 12 Oct, 2018",
+        "profileImage": "../public/assets/human3.png",
+        "name": "Ronal Jones",
+        "image": "../public/assets/img3.png"
+    },
+    {
+        "category": "Meetup",
+        "title": "Software Developer",
+        "description": "Innovaccer Analytics Private Ltd.",
+        "profileImage": "../public/assets/human4.png",
+        "name": "Ronal Jones"
+    }
+]

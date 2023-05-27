@@ -1,0 +1,53 @@
+.banner {
+  height: 90vh;
+  @media (max-width: 991.98px) {
+    height: 70vh;
+  }
+  & .blackOpacity {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 50;
+  }
+  & .textBanner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    margin-bottom: 50px;
+    color: white;
+    z-index: 55;
+    position: relative;
+    bottom: 100px;
+    padding-left: 200px;
+    @media (max-width: 991.98px) {
+      padding-left: 100px;
+    }
+    @media (max-width: 576px) {
+      padding-left: 50px;
+    }
+    & .header {
+      font-size: 36px;
+      @media (max-width: 991.98px) {
+        font-size: 22px;
+      }
+      @media (max-width: 576px) {
+        font-size: 17px;
+      }
+    }
+    & .description {
+      font-size: 18px;
+      @media (max-width: 991.98px) {
+        font-size: 15px;
+      }
+      @media (max-width: 576px) {
+        font-size: 12px;
+      }
+    }
+  }
+}

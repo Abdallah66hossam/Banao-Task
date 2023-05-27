@@ -1,0 +1,228 @@
+.signup {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  flex-wrap: wrap;
+  z-index: 199990;
+  @media (max-width: 991.98px) {
+    flex-direction: column !important;
+  }
+  & .boxModel {
+    width: 736px;
+    height: 550px;
+    background-color: #fff;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    position: absolute;
+    padding-bottom: 15px;
+    @media (max-width: 991.98px) {
+      margin: 0 10px;
+      width: 90%;
+    }
+    @media (max-width: 576px) {
+      width: 90%;
+      margin: 50px 0 0 0;
+      width: 100%;
+      bottom: 0;
+    }
+    & .close {
+      position: absolute;
+      right: -10px;
+      top: -30px;
+      color: #ffffff !important;
+      z-index: 100;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      cursor: pointer;
+      @media (max-width: 991.98px) {
+        color: #212529 !important;
+        right: 22px;
+        top: 24px;
+      }
+    }
+    & .alert {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    & .main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media (max-width: 991.98px) {
+        width: 100%;
+        display: block;
+      }
+      & .form {
+        margin-top: 10px;
+        border-radius: 2px 2px 0px 0px;
+        margin-left: 35px;
+        position: relative;
+        @media (max-width: 991.98px) {
+          width: 90%;
+          margin-left: 5%;
+        }
+        & input {
+          background: #f7f8fa;
+          outline: 0;
+          border: 1px solid #d9d9db;
+          padding-left: 10px;
+          width: 320px;
+          height: 46px;
+          &::placeholder {
+            color: #8a8a8a;
+            font-size: 15px;
+          }
+          @media (max-width: 991.98px) {
+            width: 100%;
+          }
+        }
+        & .password {
+          border-top: 0;
+          border-bottom: 0;
+        }
+        & .inputs {
+          border: 1px solid #d9d9db;
+          width: 320px;
+          height: 46px;
+          font-size: 14px;
+          display: flex;
+
+          & input {
+            background: #f7f8fa;
+            outline: 0;
+            border: 0;
+            padding-left: 10px;
+            width: 100%;
+            &:first-child {
+              border-right: 1px solid #d9d9db;
+            }
+          }
+          @media (max-width: 991.98px) {
+            width: 100%;
+            text-align: center;
+          }
+        }
+        & h1 {
+          font-weight: 700;
+          font-size: 24px;
+          margin-bottom: 20px;
+          @media (max-width: 991.98px) {
+            margin-top: 60px;
+          }
+        }
+        & .eye {
+          position: absolute;
+          right: 10px;
+          margin-top: 14px;
+          color: #dadada;
+          font-size: 20px;
+        }
+        & .submitMobile {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          & a {
+            display: none;
+            @media (max-width: 576px) {
+              display: block;
+              font-size: 13px;
+              text-align: right;
+              text-decoration-line: underline;
+              width: 100%;
+              color: #495057;
+            }
+          }
+          & .submit {
+            background: #2f6ce5;
+            color: white;
+            width: 85%;
+            padding: 10px 0;
+            border-radius: 30px;
+            border: 2px solid #2f6ce5;
+            font-weight: 600;
+            margin: 15px 0;
+            &:hover {
+              background-color: transparent;
+              color: #2f6ce5;
+            }
+            @media (max-width: 991.98px) {
+              width: 90%;
+              text-align: center;
+              position: relative;
+              left: 5%;
+            }
+          }
+        }
+        & .accEmail {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          font-weight: 400;
+          font-size: 14px;
+          width: 85%;
+          border: 0.6px solid #d9d9db;
+          border-radius: 0;
+          padding: 10px 0 10px 10px;
+          margin-top: 10px;
+          @media (max-width: 991.98px) {
+            width: 90%;
+            margin-left: 5%;
+          }
+        }
+      }
+      & .rightPic {
+        bottom: 5px;
+        & img {
+          @media (max-width: 991.98px) {
+            display: none;
+          }
+        }
+        & .account {
+          color: #3d3d3d;
+          font-size: 13px;
+          padding-left: 30px;
+          padding-right: 20px;
+          @media (max-width: 991.98px) {
+            margin-top: 15px;
+            position: relative;
+          }
+          @media (max-width: 576px) {
+            display: none;
+          }
+          & span {
+            color: #2f6ce5;
+            cursor: pointer;
+          }
+        }
+      }
+      & .signin {
+        position: relative;
+        top: 30px;
+      }
+      & .forget {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: -0.008em;
+        text-decoration: none;
+        color: #000000;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        top: 27px;
+        right: 10%;
+        @media (max-width: 991.98px) {
+          right: 0%;
+          top: 10px;
+        }
+      }
+    }
+  }
+}

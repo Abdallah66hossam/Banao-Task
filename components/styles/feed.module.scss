@@ -1,0 +1,227 @@
+// parent feed
+.feed {
+  margin: 50px 200px;
+  @media (max-width: 991.98px) {
+    margin: 40px 100px;
+  }
+  @media (max-width: 576px) {
+    margin: 40px 50px;
+  }
+}
+
+//  filter big screens
+.filtersDesk {
+  list-style-type: none;
+  padding: 0;
+  width: 55%;
+
+  & li {
+    color: #8a8a8a;
+    cursor: pointer;
+    &:first-child {
+      color: black;
+      border-bottom: 1px solid black;
+      padding-bottom: 20px;
+    }
+  }
+}
+.btns {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  position: relative;
+  bottom: 20px;
+  & > button {
+    font-weight: 500;
+    border: none;
+    font-size: 15px;
+    &:first-child {
+      font-size: 15px;
+      background-color: #edeef0;
+    }
+  }
+  & .icon {
+    margin-left: 5px;
+  }
+}
+
+// posts scrooll
+.posts {
+  width: 100%;
+  margin-bottom: 16px;
+  @media (max-width: 991.98px) {
+    width: 100%;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+  }
+  & .card {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    & .category {
+      font-weight: 500;
+      padding: 20px 0 0 15px;
+      font-size: 18px;
+      @media (max-width: 991.98px) {
+        font-size: 16px;
+      }
+      @media (max-width: 576px) {
+        font-size: 14px;
+      }
+    }
+  }
+  & .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    & h2 {
+      padding: 10px 0 5px 15px;
+      font-size: 22px;
+      font-weight: 600;
+      @media (max-width: 991.98px) {
+        padding: 8px 0 5px 10px;
+        font-size: 20px;
+      }
+      @media (max-width: 576px) {
+        padding: 6px 0 5px 8px;
+        font-size: 18px;
+      }
+    }
+    & .dotes {
+      margin-right: 20px;
+      cursor: pointer;
+      margin-bottom: 5px;
+    }
+    & .clicked {
+      margin-right: 20px;
+      cursor: pointer;
+      margin-bottom: 5px;
+      background-color: #bfbfc0;
+      padding: 2px;
+      border-radius: 4px;
+    }
+    & .options {
+      position: absolute;
+      list-style: none;
+      padding: 20px 70px 20px 15px;
+      width: 160px;
+      right: 7px;
+      top: 50px;
+      z-index: 10;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.16),
+        0px 0px 2px rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+      background-color: #fff;
+
+      & li {
+        font-size: 14px;
+        &:not(:first-child) {
+          padding-top: 6px;
+        }
+      }
+    }
+  }
+  & .description {
+    font-size: 19px;
+    color: #5c5c5c;
+    padding: 0 0 0 15px;
+  }
+  & .profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px 10px 15px;
+    & .profileInfo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      & h4 {
+        font-size: 18px;
+        font-weight: 600;
+        @media (max-width: 991.98px) {
+          font-size: 16px;
+        }
+        @media (max-width: 576px) {
+          font-size: 14px;
+        }
+      }
+    }
+    & .details {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-right: 10px;
+      font-size: 23px;
+      @media (max-width: 991.98px) {
+        gap: 5px;
+      }
+      & span {
+        font-size: 14px;
+        margin-right: 40px;
+        @media (max-width: 991.98px) {
+          margin-right: 30px;
+          font-size: 12px;
+        }
+        @media (max-width: 576px) {
+          margin-right: 0px;
+          font-size: 9px;
+        }
+      }
+      & .share {
+        cursor: pointer;
+        background-color: #edeef0;
+        padding: 6px 8px;
+        border-radius: 2px;
+        font-size: 30px;
+        @media (max-width: 991.98px) {
+          padding: 4px 6px;
+          font-size: 25px;
+        }
+        @media (max-width: 576px) {
+          padding: 3px 5px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+// Asside page
+.aside {
+  width: 40%;
+  margin-top: 50px;
+  margin-left: 100px;
+  @media (max-width: 1200px) {
+    margin-left: 50px;
+  }
+  @media (max-width: 991.98px) {
+    display: none;
+  }
+  & .editLocation {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 5px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 6px;
+    & span {
+      position: relative;
+      top: 1px;
+      margin-left: 10px;
+      font-size: 14px;
+    }
+  }
+  & .warning {
+    display: flex;
+    gap: 5px;
+    margin-top: 30px;
+    color: #000000;
+    opacity: 0.5;
+    & span {
+      font-size: 12px;
+      position: relative;
+      bottom: 4px;
+    }
+  }
+}
