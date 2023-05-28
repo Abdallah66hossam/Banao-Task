@@ -1,4 +1,4 @@
-import { data } from "../../lib/posts";
+import { data } from "../../lib/users";
 
 export default async function handler(req, res) {
   try {

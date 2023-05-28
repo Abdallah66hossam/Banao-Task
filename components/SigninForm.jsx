@@ -11,16 +11,17 @@ import { useDispatch } from "react-redux";
 import { changeFormState, close } from "@/redux/formSlice";
 import Illustration from "./Illustration";
 import Link from "next/link";
+import { useFormik } from "formik";
+import { useRouter } from "next/router";
+import { signinSchema } from "@/schemas";
 
 const SigninForm = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
     AOS.init({
       duration: 2000,
     });
   }, []);
-  const handelSubimt = (ev) => {
-    ev.preventDefault();
-  };
   const [showEye, setShowEye] = useState(false);
   let [mobile, setMobile] = useState(true);
 
@@ -31,7 +32,24 @@ const SigninForm = () => {
       setMobile(false);
     }
   }, []);
-  const dispatch = useDispatch();
+  const initialValues = {
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  };
+  const router = useRouter();
+  const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
+    useFormik({
+      initialValues,
+      validationSchema: signinSchema,
+      onSubmit: (_, { resetForm }) => {
+        resetForm();
+        router.push("/home");
+        dispatch(close());
+      },
+    });
   return (
     <section className={styles.signup} data-aos="fade-up">
       <div className={styles.boxModel}>
@@ -47,11 +65,18 @@ const SigninForm = () => {
         )}
         <div className={styles.main}>
           <form
-            onSubmit={handelSubimt}
+            onSubmit={handleSubmit}
             className={`${styles.form} ${styles.signin}`}
           >
             <h1>Sign In</h1>
-            <input type="email" placeholder="Email" />
+            <input
+              placeholder="Email"
+              name="email"
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={errors.email && touched.email ? styles.errs : ""}
+            />
             <div
               style={{
                 display: "flex",
@@ -60,7 +85,13 @@ const SigninForm = () => {
               <input
                 type={!showEye ? "password" : "text"}
                 placeholder="Password"
-                className={styles.password}
+                name="password"
+                className={`${styles.password} ${
+                  errors.password && touched.password ? styles.errs : ""
+                }`}
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
                 style={{ borderBottom: "1px solid #D9D9DB" }}
               />
               {!showEye ? (
@@ -78,7 +109,9 @@ const SigninForm = () => {
               )}
             </div>
             <div className={styles.submitMobile}>
-              <button className={`${styles.submit} btn`}>Sign In</button>
+              <button className={`${styles.submit} btn`} type="submit">
+                Sign In
+              </button>
               <Link
                 href={"/"}
                 onClick={() => dispatch(changeFormState("signin"))}

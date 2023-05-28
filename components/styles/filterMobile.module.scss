@@ -1,10 +1,13 @@
 $height: 36;
 .parent {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 15px;
+  @media (max-width: 991.98px) {
+    display: flex;
+  }
   & .posts {
     font-weight: 700;
     font-size: 14px;

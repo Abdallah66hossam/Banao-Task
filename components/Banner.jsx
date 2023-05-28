@@ -1,4 +1,3 @@
-import Image from "next/image";
 import heroDesk from "../public/assets/hero.png";
 import heroMobile from "../public/assets/hero2.png";
 import styles from "./styles/bannner.module.scss";
@@ -8,11 +7,9 @@ const Banner = () => {
   let [hero, setHero] = useState("");
   useEffect(() => {
     if (window.screen.width > 992) {
-      console.log(window.screen.width);
       setHero(heroDesk.src);
     } else {
       setHero(heroMobile.src);
-      console.log(heroMobile.src);
     }
   }, []);
   return (

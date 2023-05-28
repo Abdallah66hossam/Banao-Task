@@ -10,18 +10,22 @@
 }
 
 //  filter big screens
-.filtersDesk {
-  list-style-type: none;
-  padding: 0;
-  width: 55%;
-
-  & li {
-    color: #8a8a8a;
-    cursor: pointer;
-    &:first-child {
-      color: black;
-      border-bottom: 1px solid black;
+.filter {
+  @media (max-width: 991.98px) {
+    display: none;
+  }
+  .filtersDesk {
+    list-style-type: none;
+    padding: 0;
+    width: 55%;
+    & button {
+      color: #8a8a8a;
+      cursor: pointer;
       padding-bottom: 20px;
+      &:focus {
+        color: black;
+        border-bottom: 1px solid black !important;
+      }
     }
   }
 }
@@ -68,6 +72,16 @@
       @media (max-width: 576px) {
         font-size: 14px;
       }
+    }
+  }
+  & .detail {
+    display: flex;
+    gap: 50px;
+    width: 80%;
+    margin-left: 20px;
+    & p {
+      font-weight: 500;
+      font-size: 15px;
     }
   }
   & .title {
@@ -121,6 +135,9 @@
         }
       }
     }
+  }
+  & .buttonJOB {
+    padding: 10px 20px;
   }
   & .description {
     font-size: 19px;
@@ -214,10 +231,13 @@
   }
   & .warning {
     display: flex;
-    gap: 5px;
+    gap: 10px;
     margin-top: 30px;
     color: #000000;
     opacity: 0.5;
+    & .waarningIcons {
+      font-size: 24px;
+    }
     & span {
       font-size: 12px;
       position: relative;

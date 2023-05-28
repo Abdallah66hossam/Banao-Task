@@ -7,22 +7,43 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { IoCloseCircle } from "react-icons/io5";
 import facebook from "../public/assets/facebook.png";
 import google from "../public/assets/google.png";
-import { useDispatch, useSelector } from "react-redux";
-import { changeFormState, close, signup } from "@/redux/formSlice";
+import { useDispatch } from "react-redux";
+import { changeFormState, close } from "@/redux/formSlice";
 import Illustration from "./Illustration";
 import Link from "next/link";
+import { signupSchema } from "@/schemas";
+import { useFormik } from "formik";
+import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/router";
 
 const SignupForm = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
     AOS.init({
       duration: 2000,
     });
   }, []);
-  const handelSubimt = (ev) => {
-    ev.preventDefault();
+  const initialValues = {
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   };
+  const router = useRouter();
+  const { values, handleBlur, handleChange, handleSubmit, errors, touched } =
+    useFormik({
+      initialValues,
+      validationSchema: signupSchema,
+      onSubmit: (_, { resetForm }) => {
+        resetForm();
+        router.push("/home");
+        dispatch(close());
+      },
+    });
   const [showEye, setShowEye] = useState(false);
   let [mobile, setMobile] = useState(true);
+  console.log(errors);
   useEffect(() => {
     if (window.screen.width > 992) {
       setMobile(true);
@@ -30,7 +51,6 @@ const SignupForm = () => {
       setMobile(false);
     }
   }, []);
-  const dispatch = useDispatch();
   return (
     <>
       <section className={styles.signup} data-aos="fade-up">
@@ -46,18 +66,52 @@ const SignupForm = () => {
             </div>
           )}
           <div className={styles.main}>
-            <form onSubmit={handelSubimt} className={styles.form}>
+            <form onSubmit={handleSubmit} className={styles.form}>
               <h1>Create Account</h1>
               <section className={styles.inputs}>
-                <input type="text" placeholder="First Name" />
-                <input type="text" placeholder="Last Name" />
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  name="firstname"
+                  value={values.firstname}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
+                    errors.firstname && touched.firstname ? styles.errs : ""
+                  }
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  name="lastname"
+                  value={values.lastname}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={
+                    errors.lastname && touched.lastname ? styles.errs : ""
+                  }
+                />
               </section>
-              <input type="email" placeholder="Email" />
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={errors.email && touched.email ? styles.errs : ""}
+              />
               <div>
                 <input
                   type={!showEye ? "password" : "text"}
                   placeholder="Password"
-                  className={styles.password}
+                  name="password"
+                  className={`${styles.password} ${
+                    errors.password && touched.password ? styles.errs : ""
+                  }`}
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
                 />
                 {!showEye ? (
                   <AiOutlineEye
@@ -73,9 +127,19 @@ const SignupForm = () => {
                   />
                 )}
               </div>
-              <input type="password" placeholder="Confirm Password" />
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                name="confirmPassword"
+                value={values.confirmPassword}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={
+                  errors.password && touched.confirmPassword ? styles.errs : ""
+                }
+              />
               <div className={styles.submitMobile}>
-                <button className={`${styles.submit} btn`}>
+                <button className={`${styles.submit}`} type="submit">
                   Create Account
                 </button>
                 <Link

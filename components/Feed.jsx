@@ -4,26 +4,17 @@ import FilterDesc from "./FilterDesc";
 import FilterMobile from "./FilterMobile";
 import Posts from "./Posts";
 import AsidePosts from "./AsidePosts";
+import axios from "axios";
 
-export const Feed = () => {
-  let [filter, setFilter] = useState(false);
-  useEffect(() => {
-    if (window.screen.width > 992) {
-      setFilter(true);
-    } else {
-      setFilter(false);
-    }
-  }, []);
+export const Feed = ({ users, loggedIn }) => {
+  console.log(users);
   return (
     <section className={`${styles.feed} w-full`}>
-      {filter ? <FilterDesc /> : <FilterMobile />}
+      <FilterDesc loggedIn={loggedIn} />
+      <FilterMobile />
       <section className="d-flex justify-content-between">
-        <div>
-          <Posts />
-          <Posts />
-          <Posts />
-        </div>
-        <AsidePosts />
+        <Posts />
+        <AsidePosts users={users} loggedIn={loggedIn} />
       </section>
     </section>
   );
