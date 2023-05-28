@@ -57,7 +57,12 @@ const Posts = () => {
                   {post?.detail}
                 </p>
                 <p
-                  style={{ display: "flex", alignItems: "center", gap: "8px" }}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "5px",
+                    paddingRight: "5px",
+                  }}
                 >
                   <GoLocation />
                   {post?.location}
