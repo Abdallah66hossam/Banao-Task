@@ -85,6 +85,9 @@
     & p {
       font-weight: 500;
       font-size: 15px;
+      @media (max-width: 576px) {
+        font-size: 12px;
+      }
     }
   }
   & .title {
@@ -146,6 +149,9 @@
     font-size: 19px;
     color: #5c5c5c;
     padding: 0 0 0 15px;
+    @media (max-width: 576px) {
+      font-size: 16px;
+    }
   }
   & .profile {
     display: flex;
