@@ -19,7 +19,7 @@ const Home = ({ data }) => {
 export default Home;
 
 export async function getServerSideProps() {
-  const response = await axios.get("http://localhost:3000/api/users");
+  const response = await axios.get("https://banao-task.vercel.app/api/users");
 
   return { props: { data: response.data } };
 }

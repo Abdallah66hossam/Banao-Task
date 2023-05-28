@@ -33,7 +33,7 @@ export default function Home({ data }) {
   );
 }
 export async function getServerSideProps() {
-  const response = await axios.get("http://localhost:3000/api/posts");
+  const response = await axios.get("https://banao-task.vercel.app/api/posts");
 
   return { props: { data: response.data } };
 }
