@@ -1,6 +1,6 @@
 # Banao-Task
 
-## Demo: [Live]((https://banao-task.vercel.app/))
+## Demo: [Live](https://banao-task.vercel.app/)
 
 ### Funcionality: 
 
