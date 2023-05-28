@@ -1,7 +1,7 @@
 # Banao-Task
 
 ## Demo: [Live](https://banao-task.vercel.app/)
-## Video: [https://drive.google.com/file/d/1xNfAbpPFw1eDhLkJ6uABsDnkC-kjoYAK/view?usp=sharing](hhttps://drive.google.com/file/d/1xNfAbpPFw1eDhLkJ6uABsDnkC-kjoYAK/view?usp=sharing)
+## Video: https://drive.google.com/file/d/1xNfAbpPFw1eDhLkJ6uABsDnkC-kjoYAK/view?usp=sharing
 
 ### Funcionality: 
 
