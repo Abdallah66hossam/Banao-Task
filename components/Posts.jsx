@@ -8,7 +8,6 @@ import { GoLocation } from "react-icons/go";
 import { useSelector } from "react-redux";
 
 const Posts = () => {
-  const [dotes, setDotes] = useState(false);
   const posts = useSelector((state) => state.filter);
   // if data are filterd then render it if not render the initial data
   let data = posts[1] || posts[0];
@@ -28,18 +27,7 @@ const Posts = () => {
             <h3 className={styles.category}>{post?.category}</h3>
             <div className={styles.title}>
               <h2>{post?.title}</h2>
-              <BiDotsHorizontalRounded
-                size={27}
-                className={dotes ? styles.clicked : styles.dotes}
-                onClick={() => setDotes(!dotes)}
-              />
-              {dotes && (
-                <ul className={styles.options}>
-                  <li>Edit</li>
-                  <li>Report</li>
-                  <li>Option</li>
-                </ul>
-              )}
+              <BiDotsHorizontalRounded size={27} className={styles.dotes} />
             </div>
             {post.description && (
               <p className={styles.description}>{post?.description}</p>
@@ -60,8 +48,7 @@ const Posts = () => {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: "5px",
-                    paddingRight: "5px",
+                    gap: "8px",
                   }}
                 >
                   <GoLocation />
